@@ -7,7 +7,7 @@ module.exports = {
     show,
 };
 function index(req, res) {
-  res.render("index", { title: 'All Carnival' });
+  res.render("index", { title: 'All Carnival' , });
   Carnival.find({}, function (err, carnivals) {
     
   });

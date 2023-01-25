@@ -16,7 +16,9 @@ require('./config/database')
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
+// const countryRouter = require('./carnivals',countryRouter)
 const carnivalsRouter = require('./routes/carnivals')
+const reviewsRouter = require('./routes/reviews')
 
 
 var app = express();
@@ -43,12 +45,15 @@ app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
 });
+
 // mount routes
 
 
 // routes
 app.use('/', indexRouter);
-app.use('/carnivals', carnivalsRouter); 
+app.use('/carnivals', carnivalsRouter);
+app.use('/', reviewsRouter) 
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

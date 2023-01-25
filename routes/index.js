@@ -4,9 +4,12 @@ const passport = require('passport');
 
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', function(req, res, next) {
   res.render('index');
 });
+router.get('/',function(req, res, next){
+  res.render('/carnivals')
+})
 
 router.get('/auth/google', passport.authenticate(
   'google',

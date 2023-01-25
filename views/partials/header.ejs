@@ -12,12 +12,14 @@
 </head>
 <body>
   <nav class="navbar navbar-dark bg-dark">
-    <a href="/carnival" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>>ALL Carnivals</a>
-
+    <a href="/carnival" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> Carnival Reviews</a>
+    <a href="/carnival" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> Add Country</a>
     <% if (user) { %>
+      <a href="/carnivals/new" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>>Add Review</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <a href=""
     <% } %>
   </nav>
   
