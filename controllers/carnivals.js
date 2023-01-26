@@ -5,10 +5,11 @@ module.exports = {
     new: newCarnival,
     create,
     show,
+    delete: deleteCarnival
 };
 
 function index(req, res) {
-  Carnival.find({}, function (err, movies) {
+  Carnival.find({}, function (err, carnivals) {
     res.render("carnivals/index", { title: "All Carnivals" });
   });
 }
@@ -36,5 +37,10 @@ function create(req, res) {
   function show(req,res){
     Carnival.findById(req.params.id)
     res.redirect("carnivals/show")
+  }
+
+  function deleteCarnivl(req, res) {
+    Carnival.deleteOne(req.params.id);
+    res.redirect('/todos');
   }
   

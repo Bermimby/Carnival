@@ -5,10 +5,10 @@ const bandsCtrl = require('../controllers/bands')
 
 // This router is mounted to a "starts with" path of '/'
 
+router.get('/bands',bandsCtrl.index)
+router.get('/bands', bandsCtrl.new);
 
-router.get('/new', bandsCtrl.new);
-
-router.post('/bands/show', bandsCtrl.create);
+router.post('/bands', bandsCtrl.create);
 router.get('/:id', bandsCtrl.show);
 
 

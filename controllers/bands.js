@@ -5,14 +5,15 @@ module.exports = {
     new: newBand,
     create,
     show,
+    index,
 }
 
 
 function newBand(req, res) {
     Band.find({})
-      //Sort performers by their name
+    
       .sort('name')
-      .exec(function (err, performers) {
+      .exec(function (err, bands) {
         res.render('bands/new', {
           title: 'Add Band',
           bands
@@ -20,17 +21,25 @@ function newBand(req, res) {
       });
   }
 
-  function create(req, res) {
-   
-    req.body;
-Band.create(req.body, function (err, band) {
-  res.redirect('bands/new');
+function create(req, res) {
+  Band.create(req.body, function (err, band) {
+  console.log(req.body)
+  res.redirect('/bands');
 });
   }
 
   function show (req,res){
     function show(req,res){
-      Carnival.findById(req.params.id)
+      Band.findById(req.params.id)
       res.render("bands/show")
     }
   }
+
+  function index (req,res){
+    Band.find({}, function (err, bands) {
+      console.log('bands;',bands)
+      res.render("bands/index", { title: "All Bands",bands });
+    });
+  }
+  
+  

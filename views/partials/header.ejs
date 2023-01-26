@@ -16,7 +16,7 @@
     <a href="/carnival" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> Add Country</a>
     <% if (user) { %>
       <a href="/carnivals/new" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>>Add Review</a>
-      <a href="/bands/new" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> Add Band</a>
+      <a href="/bands" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> Add Band</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
