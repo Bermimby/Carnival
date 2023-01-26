@@ -1,13 +1,15 @@
 const Carnival = require('../models/carnival')
 
 module.exports ={
-    create
+    create,
+    
+    
 }
 
 
 function create(req, res) {
     
-    Movie.findById(req.params.id, function(err, carnival) {
+    Carnival.findById(req.params.id, function(err, carnival) {
   
       // Add the user-centric info to req.body (the new review)
       req.body.user = req.user._id;
@@ -18,7 +20,9 @@ function create(req, res) {
       carnival.reviews.push(req.body);
       // Always save the top-level document (not subdocs)
       carnival.save(function(err) {
-        res.redirect(`/carnivals/${carnival._id}`);
+        res.render('/carnivals');
       });
     });
   }
+
+  

@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<div>Before adding, please ensure that the Band is not listed already:</div>
+<section id="badge-container">
+  <% bands.forEach(function(p) { %>
+    <article class="badge"><%= p.name %></article>
+  <% }) %>
+</section>
+
+<form id="add-band-form" action="/bands" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Born:</label>
+  <input type="date" name="born">
+  <input type="submit" value="Add Band">
+</form>
+
+<%- include('../partials/footer') %>

@@ -6,12 +6,15 @@ module.exports = {
     create,
     show,
 };
+
 function index(req, res) {
-  res.render("index", { title: 'All Carnival' , });
-  Carnival.find({}, function (err, carnivals) {
-    
+  Carnival.find({}, function (err, movies) {
+    res.render("carnivals/index", { title: "All Carnivals" });
   });
 }
+
+
+
 function newCarnival(req,res){
     res.render("carnivals/new",);
 }
@@ -32,6 +35,6 @@ function create(req, res) {
 
   function show(req,res){
     Carnival.findById(req.params.id)
-    res.render("carnivals/show")
+    res.redirect("carnivals/show")
   }
   
