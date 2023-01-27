@@ -2,6 +2,9 @@ const Carnival = require('../models/carnival')
 
 module.exports ={
     create,
+    show,
+    deleteCarnival,
+
     
     
 }
@@ -10,19 +13,26 @@ module.exports ={
 function create(req, res) {
     
     Carnival.findById(req.params.id, function(err, carnival) {
-  
-      // Add the user-centric info to req.body (the new review)
       req.body.user = req.user._id;
       req.body.userName = req.user.name;
       req.body.userAvatar = req.user.avatar;
-  
-      // Push the subdoc for the review
-      carnival.reviews.push(req.body);
-      // Always save the top-level document (not subdocs)
-      carnival.save(function(err) {
+       carnival.reviews.push(req.body);
+       carnival.save(function(err) {
+        console.log(reviews)
         res.render('/carnivals');
       });
     });
   }
-
+function show (req,res){
+      Review.findById(req.params.id)
+      res.render("carnivals/show")
+    }
   
+    function deleteCarnival(req, res) {
+      Review.findById(req.params.id, function(err, carnival) {
+       carnival.review.remove(req.params.reviewId);
+          carnival.save();
+          res.redirect(`/carnivals/${carnival._id}`);
+      });
+  }
+

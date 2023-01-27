@@ -5,9 +5,15 @@ const bandSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    bands: [{
+      type: Schema.Types.ObjectId, 
+      ref: 'Band'
+
+    }]
+    }
   }
-}, {
+, {
   timestamps: true
 });
 

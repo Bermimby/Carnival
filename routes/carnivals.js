@@ -6,5 +6,8 @@ router.get('/', carnivalsCtrl.index);
 router.get('/new', carnivalsCtrl.new);
 router.get('/:id', carnivalsCtrl.show);
 router.post('/',carnivalsCtrl.create);
-router.delete('/:id',carnivalsCtrl.delete)
+
+
 module.exports = router;
+
+

@@ -1,18 +1,34 @@
 <%- include('../partials/header') %>
 
-<div>Before adding, please ensure that the Band is not listed already:</div>
+
 <section id="badge-container">
-  <% bands.forEach(function(p) { %>
-    <article class="badge"><%= p.name %></article>
-  <% }) %>
+ 
+  <h3><%= band.name %></h3> 
+ <% band.reviews.forEach(function(r){%>
+  
+  <ol>
+
+  <li><%= r.content %></li>
+  </ol>
+ 
+   <% }) %>
 </section>
 
-<form id="add-band-form" action="/bands" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name">
-  <label>Born:</label>
-  <input type="date" name="born">
-  <input type="submit" value="Add Band">
-</form>
+<h2>Enter a  Review</h2>
 
+<form action="/carnivals/bands/<%=band._id%>" method="POST">
+
+
+      </label><br>
+  <label>Year You Played Mas:
+    <input type="number" name="yearPlayed">
+  </label><br>
+  <label>Review:
+    <input type="string" name="content">
+  </label><br>
+<button type="submit">Add Review</button>
+
+
+</form>
 <%- include('../partials/footer') %>
+

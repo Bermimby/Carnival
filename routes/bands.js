@@ -9,7 +9,7 @@ router.get('/bands',bandsCtrl.index)
 router.get('/bands', bandsCtrl.new);
 
 router.post('/bands', bandsCtrl.create);
-router.get('/:id', bandsCtrl.show);
+router.get('/carnivals/bands/:id', bandsCtrl.show);
 
 
 

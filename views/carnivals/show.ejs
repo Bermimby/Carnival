@@ -1,43 +1,4 @@
 <%- include('../partials/header') %>
-<% if (user) { %>
-    <form id="add-review-form" method="POST" action="/carnivals/<%= carnival._id %>/reviews">
-      <label>Review:</label>
-      <textarea name="content"></textarea>
-      <label>Rating:</label>
-      <select name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <input type="submit" value="Add Review">
-    </form>
- 
-  <% } %>
-
-<% if (carnival.reviews.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% carnival.reviews.forEach(function(r) { %>
-        <tr>
-        
-          <td><%= r.content %></td>
-          
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Reviews Yet</h5>
-<% } %>
 
 
 <%- include('../partials/footer') %>

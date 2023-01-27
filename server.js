@@ -1,6 +1,4 @@
 
-// Hello world 
-// require all modules
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -54,9 +52,11 @@ app.use(function (req, res, next) {
 
 // routes
 app.use('/', indexRouter);
-app.use('/carnivals', carnivalsRouter);
+app.use('/', bandsRouter);
 app.use('/', reviewsRouter) 
-app.use('/', bandsRouter)
+app.use('/carnivals', carnivalsRouter);
+
+
 
 
 // catch 404 and forward to error handler

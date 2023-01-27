@@ -2,12 +2,14 @@
 
 
 <section id="badge-container">
-   
-    <ul>
-        <% bands.forEach(function(b) { %>
-            <li> <%= b.name %></li>
-        <% }); %>
-    </ul>
+  
+  <ul>
+    <% bands.forEach(function(b) { %>
+        <li><a href="/carnivals/bands/<%=b._id%>"><%= b.name %></a></li>
+        <li> <%= b.reviews%></li>
+    <% }); %>
+</ul>
+ 
    
    </section>
 <h3>Before adding, please ensure that the Band is not listed already:</h3>
@@ -16,5 +18,7 @@
     <input type="text" name="name">
     <input type="submit" value="Add Band">
   </form>
+
+
 
 <%- include('../partials/footer') %>

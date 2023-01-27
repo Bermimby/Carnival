@@ -8,21 +8,35 @@ const reviewSchema = new Schema({
     type: String,
     required: true
   },
-  rating: {
-    type: Number,
-    min: 1,
-    max: 5,
-    default: 5
-  }
+  
 }, {
   timestamps: true
 });
 
 
+
+const bandSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+    reviews: [reviewSchema]
+   
+    }
+  }
+, {
+  timestamps: true
+});
+
+
+
+
+
 const carnivalSchema = new Schema({
     band: String,
     carnivalYear: Number,
-    reviews: [reviewSchema]
+    bands: [bandSchema],
+    
 },
 {
     timestamps: true

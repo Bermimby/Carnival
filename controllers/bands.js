@@ -6,6 +6,7 @@ module.exports = {
     create,
     show,
     index,
+    
 }
 
 
@@ -29,11 +30,14 @@ function create(req, res) {
   }
 
   function show (req,res){
-    function show(req,res){
-      Band.findById(req.params.id)
-      res.render("bands/show")
+      Band.findById(req.params.id,function(err, band){
+        band.reviews = [{content: ''}]
+        console.log(band.reviews)
+        res.render("bands/new", {title:"Band Details",band}) 
+      })
+      
     }
-  }
+  
 
   function index (req,res){
     Band.find({}, function (err, bands) {
