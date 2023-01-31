@@ -52,9 +52,10 @@ app.use(function (req, res, next) {
 
 // routes
 app.use('/', indexRouter);
+app.use('/carnivals', carnivalsRouter);
 app.use('/', bandsRouter);
 app.use('/', reviewsRouter) 
-app.use('/carnivals', carnivalsRouter);
+
 
 
 

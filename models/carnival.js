@@ -20,10 +20,11 @@ const bandSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    reviews: [reviewSchema]
-   
-    }
+    },
+  
+  reviews: [reviewSchema]
   }
+
 , {
   timestamps: true
 });

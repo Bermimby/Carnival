@@ -3,7 +3,7 @@ const router = express.Router();
 const reviewsCtrl = require('../controllers/reviews')
 
 
-router.post('/reviews', reviewsCtrl.create)
+router.post('/bands/:id/reviews', reviewsCtrl.create)
 
 
 

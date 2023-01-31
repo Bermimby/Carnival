@@ -14,9 +14,9 @@
   
   <nav class="navbar navbar-dark bg-dark">
 
-    <a href="/carnival" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> History of Carnival</a>
+    <a href="/carnivals" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> History of Carnival</a>
     <% if (user) { %>
-
+ 
       <a href="/bands" <% if(title) { %> <%- title === 'All Carnival' ? 'class="active"' : '' %> <% } %>> Bands</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>

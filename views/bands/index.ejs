@@ -3,21 +3,23 @@
 
 <section id="badge-container">
   
-  <ul>
-    <% bands.forEach(function(b) { %>
-        <li><a href="/carnivals/bands/<%=b._id%>"><%= b.name %></a></li>
-        <li> <%= b.reviews%></li>
-    <% }); %>
-</ul>
- 
+
    
    </section>
 <h3>Before adding, please ensure that the Band is not listed already:</h3>
-<form id="add-band-form" action="/bands" method="POST">
+
+<form id="add-band-form" action="/bands/" method="POST">
     <label>Name:</label>
     <input type="text" name="name">
     <input type="submit" value="Add Band">
   </form>
+<h4>Click on the band name to add a review</h4>
+  <ul>
+    <% bands.forEach(function(b) { %>
+        <li><a href="/bands/<%=b._id%>"><%= b.name %></a></li>
+       
+    <% }); %>
+</ul>
 
 
 
