@@ -12,6 +12,7 @@ router.get('/bands/new', bandsCtrl.new);
 router.post('/bands', bandsCtrl.create);
 router.get('/bands/:id', bandsCtrl.show);
 router.post('/bands/:id',bandsCtrl.addReview)
+router.delete('/bands/:id/:reviewId', bandsCtrl.delete)
 
 
 

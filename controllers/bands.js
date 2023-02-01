@@ -10,6 +10,7 @@ module.exports = {
     index,
     addReview,
     addBand,
+    delete: deleteReview,
 
     
 }
@@ -66,8 +67,15 @@ function create(req, res) {
   res.redirect('/bands')
 })
       }
- 
-    
+
+    async  function deleteReview(req, res) {
+        console.log('text delete',req.params.reviewId,req.params.id)
+      await Band.updateOne({_id: req.params.id}, {$pull: {reviews: {_id :req.params.reviewId}}})
+       res.redirect('/bands');
+       
+        };
+      
+      
   
 
 

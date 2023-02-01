@@ -3,7 +3,7 @@ const Carnival = require('../models/carnival')
 module.exports ={
     create,
     show,
-    deleteCarnival,
+    
 
     
     
@@ -28,11 +28,5 @@ function show (req,res){
       res.render("carnivals/show")
     }
   
-    function deleteCarnival(req, res) {
-      Review.findById(req.params.id, function(err, carnival) {
-       carnival.review.remove(req.params.reviewId);
-          carnival.save();
-          res.redirect(`/carnivals/${carnival._id}`);
-      });
-  }
+   
 

@@ -3,18 +3,7 @@
 
 <section id="badge-container">
  
-  <h3><%= band.name %></h3> 
- <% band.reviews.forEach(function(r){%>
-  
-  <ol>
-
-  <li><%= r.content %></li>
-  </ol>
- 
-   <% }) %>
-</section>
-
-<h2>Enter a  Review</h2>
+  <h2>Enter a  Review</h2>
 
 <form action="/bands/<%=band._id%>" method="POST">
 
@@ -29,7 +18,23 @@
 <%band.reviews.forEach(b=>{ %>
 <span><%b.content%></span>
 <% }) %>
-
-
 </form>
-<%- include('../partials/footer') %>
+
+<h3><%= band.name %></h3> 
+<% band.reviews.forEach(function(r){%>
+  <form action="/bands/<%=band._id %>/<%= r._id %>?_method=DELETE"
+    class="delete-form" method="POST">
+    <button type="submit">X</button>
+  </form>
+  <a href="/bands/<%= band.id %>"></a>
+
+ 
+ <ol>
+
+ <li><%= r.content %></li>
+ </ol>
+
+  <% }) %>
+</section>
+
+<%- include('../partials/footer') %> 
